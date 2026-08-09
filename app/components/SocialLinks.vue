@@ -4,8 +4,8 @@ const { social } = useAppConfig()
 const links = [
   { label: 'LinkedIn', href: social.linkedin },
   { label: 'GitHub', href: social.github },
-  { label: 'Instagram', href: social.instagram },
   { label: 'Email', href: social.email },
+  { label: 'Instagram', href: social.instagram },
 ]
 </script>
 

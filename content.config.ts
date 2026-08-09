@@ -18,6 +18,16 @@ export default defineContentConfig({
         link: z.string().url().optional(),
       }),
     }),
+    certifications: defineCollection({
+      type: 'data',
+      source: 'certifications/*.md',
+      schema: z.object({
+        title: z.string(),
+        issuer: z.string(),
+        date: z.string(),
+        link: z.string().url().optional(),
+      }),
+    }),
     projects: defineCollection({
       type: 'data',
       source: 'projects/*.md',
