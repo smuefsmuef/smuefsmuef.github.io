@@ -68,7 +68,6 @@ useSeoMeta({
       <PetroglyphMotif variant="dots-d" />
       <div class="relative z-10 mx-auto max-w-6xl px-6 sm:px-10">
         <p class="eyebrow mb-2">Get in touch</p>
-        <h2 class="gradient-heading text-2xl sm:text-3xl">Find Me</h2>
         <div class="mt-6">
           <SocialLinks />
         </div>
