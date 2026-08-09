@@ -7,7 +7,6 @@ const links = [
   { label: 'Home', to: '/' },
   { label: 'Experience', to: '/experience' },
   { label: 'Projects', to: '/projects' },
-  { label: 'About', to: '/about' },
 ]
 
 function close() {
@@ -66,9 +65,6 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
           </NuxtLink>
         </li>
         <li>
-          <CvDownloadButton variant="outline" />
-        </li>
-        <li>
           <ThemeToggle />
         </li>
       </ul>
@@ -89,9 +85,6 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
         >
           {{ link.label }}
         </NuxtLink>
-      </li>
-      <li>
-        <CvDownloadButton variant="outline" />
       </li>
     </ul>
   </nav>

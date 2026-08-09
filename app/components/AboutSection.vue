@@ -3,7 +3,7 @@ const { data: aboutItems } = await useAsyncData('about', () => queryCollection('
 </script>
 
 <template>
-  <div class="grid gap-10 sm:grid-cols-3">
+  <div class="grid gap-6 sm:grid-cols-3">
     <AboutCard v-for="item in aboutItems" :key="item.id" :item="item" />
   </div>
 </template>

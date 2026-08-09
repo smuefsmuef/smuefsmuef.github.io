@@ -12,10 +12,6 @@ useSeoMeta({
       Scrum leadership to hands-on development.
     </PageIntro>
 
-    <div class="relative z-10 mt-6">
-      <CvDownloadButton variant="brand" />
-    </div>
-
     <div class="relative mt-12 py-2">
       <SectionGlow corner="br" />
       <PetroglyphMotif variant="sun" />

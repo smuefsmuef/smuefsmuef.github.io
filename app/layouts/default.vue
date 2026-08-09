@@ -4,7 +4,6 @@
     <main class="flex-1 overflow-x-hidden">
       <slot />
     </main>
-    <SocialLinks />
     <FooterSection />
   </div>
 </template>
