@@ -6,7 +6,7 @@ const { skills } = useAppConfig()
 <template>
   <div class="grid gap-10 sm:grid-cols-2">
     <div>
-      <p class="eyebrow mb-4">Certifications</p>
+      <p class="eyebrow mb-4">Certifications &amp; Education</p>
       <ul class="space-y-3">
         <li
           v-for="cert in certifications"
