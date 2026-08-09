@@ -16,7 +16,7 @@ withDefaults(
     <div class="relative z-10 max-w-2xl">
       <p class="eyebrow mb-3">{{ eyebrow }}</p>
       <component :is="level" class="gradient-heading text-4xl sm:text-5xl lg:text-6xl">{{ title }}</component>
-      <p class="mt-5 text-xl sm:text-2xl text-[var(--color-ink-muted)]">
+      <p class="mt-5 text-xl text-[var(--color-ink-muted)]">
         <slot />
       </p>
     </div>
