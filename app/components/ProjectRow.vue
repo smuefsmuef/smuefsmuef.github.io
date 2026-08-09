@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { categoryMeta } from '~/utils/categoryMeta'
+
 const props = defineProps<{
   project: {
     title: string
     image: string
     description: string
     tools: string
+    category: 'dev' | 'design' | 'pm'
     link?: string
   }
 }>()
@@ -12,6 +15,7 @@ const props = defineProps<{
 const tags = computed(() => props.project.tools.split(',').map((tool) => tool.trim()).filter(Boolean))
 const visibleTags = computed(() => tags.value.slice(0, 3))
 const extraCount = computed(() => Math.max(0, tags.value.length - 3))
+const meta = computed(() => categoryMeta[props.project.category])
 </script>
 
 <template>
@@ -28,9 +32,18 @@ const extraCount = computed(() => Math.max(0, tags.value.length - 3))
       </span>
 
       <span class="min-w-0 flex-shrink">
-        <h3 class="text-base font-semibold text-[var(--color-ink)] transition group-hover:text-[var(--color-brand-teal)]">
-          {{ project.title }}
-        </h3>
+        <span class="flex flex-wrap items-center gap-2">
+          <h3 class="text-base font-semibold text-[var(--color-ink)] transition group-hover:text-[var(--color-brand-teal)]">
+            {{ project.title }}
+          </h3>
+          <span
+            class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.65rem] font-semibold"
+            :class="meta.badgeClass"
+          >
+            <Icon :name="meta.icon" class="h-2.5 w-2.5" />
+            {{ meta.label }}
+          </span>
+        </span>
         <p class="mt-0.5 line-clamp-2 text-sm text-[var(--color-ink-muted)]">{{ project.description }}</p>
         <span class="mt-2 flex flex-wrap gap-1.5">
           <span

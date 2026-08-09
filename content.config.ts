@@ -26,7 +26,7 @@ export default defineContentConfig({
         image: z.string(),
         description: z.string(),
         tools: z.string(),
-        category: z.enum(['dev', 'design']),
+        category: z.enum(['dev', 'design', 'pm']),
         link: z.string().url().optional(),
       }),
     }),
