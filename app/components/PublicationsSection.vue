@@ -22,6 +22,7 @@ const typeLabel = { publication: 'Publication', blogpost: 'Blog Post' }
           <span v-else>{{ pub.title }}</span>
         </p>
         <p class="text-xs text-[var(--color-ink-muted)]">{{ pub.venue }}</p>
+        <p v-if="pub.description" class="mt-1.5 max-w-2xl text-sm text-[var(--color-ink-muted)]">{{ pub.description }}</p>
       </div>
       <span class="whitespace-nowrap font-mono text-xs text-[var(--color-ink-muted)]">{{ pub.date }}</span>
     </li>

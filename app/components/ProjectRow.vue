@@ -7,7 +7,7 @@ const props = defineProps<{
     image?: string
     description: string
     tools: string
-    category: 'dev' | 'design' | 'pm' | 'writing'
+    categories: Array<'dev' | 'design' | 'pm' | 'writing'>
     link?: string
   }
 }>()
@@ -15,7 +15,7 @@ const props = defineProps<{
 const tags = computed(() => props.project.tools.split(',').map((tool) => tool.trim()).filter(Boolean))
 const visibleTags = computed(() => tags.value.slice(0, 3))
 const extraCount = computed(() => Math.max(0, tags.value.length - 3))
-const meta = computed(() => categoryMeta[props.project.category])
+const badges = computed(() => props.project.categories.map((category) => categoryMeta[category]))
 </script>
 
 <template>
@@ -29,7 +29,7 @@ const meta = computed(() => categoryMeta[props.project.category])
     >
       <span class="flex h-[76px] w-[76px] flex-shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-[var(--color-tag)] shadow-[0_1px_2px_var(--shadow)] transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_8px_20px_-4px_color-mix(in_srgb,var(--color-grad-b)_45%,var(--shadow))]">
         <img v-if="project.image" :src="project.image" :alt="`${project.title} screenshot`" loading="lazy" class="h-full w-full object-cover" />
-        <Icon v-else :name="meta.icon" class="h-7 w-7 text-[var(--color-tag-ink)]" aria-hidden="true" />
+        <Icon v-else :name="badges[0].icon" class="h-7 w-7 text-[var(--color-tag-ink)]" aria-hidden="true" />
       </span>
 
       <span class="min-w-0 flex-shrink">
@@ -38,11 +38,13 @@ const meta = computed(() => categoryMeta[props.project.category])
             {{ project.title }}
           </h3>
           <span
+            v-for="badge in badges"
+            :key="badge.label"
             class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.65rem] font-semibold"
-            :class="meta.badgeClass"
+            :class="badge.badgeClass"
           >
-            <Icon :name="meta.icon" class="h-2.5 w-2.5" />
-            {{ meta.label }}
+            <Icon :name="badge.icon" class="h-2.5 w-2.5" />
+            {{ badge.label }}
           </span>
         </span>
         <p class="mt-0.5 line-clamp-2 text-sm text-[var(--color-ink-muted)]">{{ project.description }}</p>

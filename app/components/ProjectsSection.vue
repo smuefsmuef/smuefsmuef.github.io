@@ -5,20 +5,22 @@ const { data: projects } = await useAsyncData('projects', () => queryCollection(
 const { data: publications } = await useAsyncData('publications-as-projects', () => queryCollection('publications').order('id', 'ASC').all())
 
 const allItems = computed(() => {
+  const projectItems = (projects.value ?? []).map((p) => ({ ...p, categories: [p.category] }))
+
   const writingItems = (publications.value ?? []).map((pub) => ({
     id: pub.id,
     title: pub.title,
-    image: undefined,
-    description: pub.venue,
+    image: pub.image,
+    description: pub.description ?? pub.venue,
     tools: pub.date,
-    category: 'writing' as const,
+    categories: ['writing' as const, ...(pub.extraCategories ?? [])],
     link: pub.link,
   }))
 
   const polybau = writingItems.find((item) => item.title.includes('Polybau'))
   const madrano = writingItems.find((item) => item.title.includes('Airolo-Madrano'))
 
-  const combined = polybau ? [polybau, ...(projects.value ?? [])] : [...(projects.value ?? [])]
+  const combined = polybau ? [polybau, ...projectItems] : [...projectItems]
   if (madrano) {
     combined.splice(Math.max(combined.length - 1, 0), 0, madrano)
   }
@@ -29,12 +31,12 @@ const activeCategory = ref<'dev' | 'design' | 'pm' | 'writing' | null>(null)
 
 const availableCategories = computed(() => {
   return (['dev', 'design', 'pm', 'writing'] as const)
-    .filter((key) => allItems.value.some((p) => p.category === key))
+    .filter((key) => allItems.value.some((p) => p.categories.includes(key)))
     .map((key) => ({ key, meta: categoryMeta[key] }))
 })
 
 const filteredProjects = computed(() => {
-  return activeCategory.value ? allItems.value.filter((p) => p.category === activeCategory.value) : allItems.value
+  return activeCategory.value ? allItems.value.filter((p) => p.categories.includes(activeCategory.value)) : allItems.value
 })
 
 function setCategory(category: 'dev' | 'design' | 'pm' | 'writing' | null) {
