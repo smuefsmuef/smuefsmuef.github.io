@@ -50,8 +50,7 @@ useSeoMeta({
       <div class="relative z-10 mx-auto max-w-6xl px-6 sm:px-10">
         <div class="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p class="eyebrow mb-2">Building</p>
-            <h2 class="gradient-heading text-2xl sm:text-3xl">Featured projects</h2>
+            <p class="eyebrow mb-2">Featured projects</p>
           </div>
           <NuxtLink to="/projects" class="underline-fade text-sm font-medium text-[var(--color-ink-muted)] hover:text-brand-teal">
             See all projects →

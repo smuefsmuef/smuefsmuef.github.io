@@ -14,5 +14,10 @@ useSeoMeta({
     <div class="mt-14">
       <ProjectsSection />
     </div>
+
+    <div class="mt-16 border-t border-[var(--color-line)] pt-12">
+      <p class="eyebrow mb-6">Publications &amp; Blog Posts</p>
+      <PublicationsSection />
+    </div>
   </div>
 </template>
