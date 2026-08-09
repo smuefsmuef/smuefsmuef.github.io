@@ -2,22 +2,34 @@
 import { categoryMeta } from '~/utils/categoryMeta'
 
 const { data: projects } = await useAsyncData('projects', () => queryCollection('projects').order('id', 'ASC').all())
+const { data: publications } = await useAsyncData('publications-as-projects', () => queryCollection('publications').order('id', 'ASC').all())
 
-const activeCategory = ref<'dev' | 'design' | 'pm' | null>(null)
+const allItems = computed(() => {
+  const writingItems = (publications.value ?? []).map((pub) => ({
+    id: pub.id,
+    title: pub.title,
+    image: undefined,
+    description: pub.venue,
+    tools: pub.date,
+    category: 'writing' as const,
+    link: pub.link,
+  }))
+  return [...(projects.value ?? []), ...writingItems]
+})
+
+const activeCategory = ref<'dev' | 'design' | 'pm' | 'writing' | null>(null)
 
 const availableCategories = computed(() => {
-  const all = projects.value ?? []
-  return (['dev', 'design', 'pm'] as const)
-    .filter((key) => all.some((p) => p.category === key))
+  return (['dev', 'design', 'pm', 'writing'] as const)
+    .filter((key) => allItems.value.some((p) => p.category === key))
     .map((key) => ({ key, meta: categoryMeta[key] }))
 })
 
 const filteredProjects = computed(() => {
-  const all = projects.value ?? []
-  return activeCategory.value ? all.filter((p) => p.category === activeCategory.value) : all
+  return activeCategory.value ? allItems.value.filter((p) => p.category === activeCategory.value) : allItems.value
 })
 
-function setCategory(category: 'dev' | 'design' | 'pm' | null) {
+function setCategory(category: 'dev' | 'design' | 'pm' | 'writing' | null) {
   activeCategory.value = category
 }
 </script>

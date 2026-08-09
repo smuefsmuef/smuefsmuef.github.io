@@ -71,12 +71,14 @@ body {
 .badge-pm { background: rgb(253 230 138 / 0.6); color: #78350f; }
 .badge-dev { background: rgb(153 246 228 / 0.6); color: #134e4a; }
 .badge-design { background: rgb(233 213 255 / 0.6); color: #581c87; }
+.badge-writing { background: rgb(191 219 254 / 0.6); color: #1e3a8a; }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     .badge-pm { background: rgb(245 158 11 / 0.18); color: #fcd34d; }
     .badge-dev { background: rgb(45 212 191 / 0.18); color: #5eead4; }
     .badge-design { background: rgb(192 132 252 / 0.18); color: #d8b4fe; }
+    .badge-writing { background: rgb(96 165 250 / 0.18); color: #93c5fd; }
   }
 }
 
@@ -84,6 +86,7 @@ body {
   .badge-pm { background: rgb(245 158 11 / 0.18); color: #fcd34d; }
   .badge-dev { background: rgb(45 212 191 / 0.18); color: #5eead4; }
   .badge-design { background: rgb(192 132 252 / 0.18); color: #d8b4fe; }
+  .badge-writing { background: rgb(96 165 250 / 0.18); color: #93c5fd; }
 }
 
 /* Eyebrow labels + gradient headings, shared across page intros and section headers */

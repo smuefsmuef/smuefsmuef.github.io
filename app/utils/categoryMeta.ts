@@ -14,6 +14,11 @@ export const categoryMeta = {
     icon: 'fa6-solid:palette',
     badgeClass: 'badge-design',
   },
+  writing: {
+    label: 'Writing',
+    icon: 'fa6-solid:pen-nib',
+    badgeClass: 'badge-writing',
+  },
 } as const
 
 export type ExperienceCategory = keyof typeof categoryMeta

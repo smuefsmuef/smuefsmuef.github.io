@@ -4,10 +4,10 @@ import { categoryMeta } from '~/utils/categoryMeta'
 const props = defineProps<{
   project: {
     title: string
-    image: string
+    image?: string
     description: string
     tools: string
-    category: 'dev' | 'design' | 'pm'
+    category: 'dev' | 'design' | 'pm' | 'writing'
     link?: string
   }
 }>()
@@ -27,8 +27,9 @@ const meta = computed(() => categoryMeta[props.project.category])
       :rel="project.link ? 'noopener noreferrer' : undefined"
       class="group -mx-2 flex items-center gap-5 rounded-lg px-2 py-3 transition hover:bg-[var(--color-brand-teal)]/[0.06]"
     >
-      <span class="h-[76px] w-[76px] flex-shrink-0 overflow-hidden rounded-[10px] bg-[var(--color-tag)] shadow-[0_1px_2px_var(--shadow)] transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_8px_20px_-4px_color-mix(in_srgb,var(--color-grad-b)_45%,var(--shadow))]">
-        <img :src="project.image" :alt="`${project.title} screenshot`" loading="lazy" class="h-full w-full object-cover" />
+      <span class="flex h-[76px] w-[76px] flex-shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-[var(--color-tag)] shadow-[0_1px_2px_var(--shadow)] transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_8px_20px_-4px_color-mix(in_srgb,var(--color-grad-b)_45%,var(--shadow))]">
+        <img v-if="project.image" :src="project.image" :alt="`${project.title} screenshot`" loading="lazy" class="h-full w-full object-cover" />
+        <Icon v-else :name="meta.icon" class="h-7 w-7 text-[var(--color-tag-ink)]" aria-hidden="true" />
       </span>
 
       <span class="min-w-0 flex-shrink">
