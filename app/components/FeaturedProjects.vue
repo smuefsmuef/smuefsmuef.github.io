@@ -16,7 +16,7 @@ const items = computed(() => {
     title: pub.title,
     image: pub.image,
     description: pub.description ?? pub.venue,
-    tools: pub.date,
+    tools: `${pub.type === 'blogpost' ? 'Blog Post' : 'Publication'}, ${pub.date}`,
     categories: ['writing' as const, ...(pub.extraCategories ?? [])],
     link: pub.link,
   }))
