@@ -38,7 +38,6 @@ export default defineContentConfig({
       schema: z.object({
         title: z.string(),
         venue: z.string(),
-        date: z.string(),
         type: z.enum(['publication', 'blogpost']).default('publication'),
         description: z.string().optional(),
         image: z.string().optional(),

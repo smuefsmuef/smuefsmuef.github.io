@@ -12,7 +12,7 @@ const allItems = computed(() => {
     title: pub.title,
     image: pub.image,
     description: pub.description ?? pub.venue,
-    tools: `${pub.type === 'blogpost' ? 'Blog Post' : 'Publication'}, ${pub.date}`,
+    tools: pub.type === 'blogpost' ? 'Blog Post' : 'Publication',
     categories: ['writing' as const, ...(pub.extraCategories ?? [])],
     link: pub.link,
   }))
@@ -22,7 +22,7 @@ const allItems = computed(() => {
 
   const combined = polybau ? [polybau, ...projectItems] : [...projectItems]
   if (madrano) {
-    combined.splice(Math.max(combined.length - 1, 0), 0, madrano)
+    combined.push(madrano)
   }
   return combined
 })
