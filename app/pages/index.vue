@@ -7,7 +7,7 @@ useSeoMeta({
 
 <template>
   <div>
-    <HeroSection />
+    <h1 class="sr-only">Petra Kohler — Product Owner &amp; Software Developer</h1>
 
     <section class="bg-white py-16">
       <div class="mx-auto max-w-6xl px-6 sm:px-10">
