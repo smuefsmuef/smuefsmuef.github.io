@@ -12,17 +12,17 @@ useSeoMeta({
       Scrum leadership to hands-on development.
     </PageIntro> -->
 
-    <div class="relative mt-12 py-2">
+    <div>
+      <CredentialsSection />
+    </div>
+
+    <div class="relative mt-16 border-t border-[var(--color-line)] pt-12">
       <SectionGlow corner="br" />
       <PetroglyphMotif variant="sun" />
       <PetroglyphMotif variant="dots-c" />
       <div class="relative z-10">
         <ExperienceTimeline />
       </div>
-    </div>
-
-    <div class="relative mt-16 border-t border-[var(--color-line)] pt-12">
-      <CredentialsSection />
     </div>
   </div>
 </template>
