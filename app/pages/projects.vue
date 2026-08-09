@@ -1,18 +1,17 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Projects — Petra Kohler',
-  description: 'Development and design projects by Petra Kohler — apps, prototypes and case studies.',
+  description: 'Projects by Petra Kohler — apps, prototypes and case studies.',
 })
 </script>
 
 <template>
-  <div class="mx-auto max-w-6xl px-6 py-16 sm:px-10">
-    <h1 class="text-3xl font-bold text-brand-teal sm:text-4xl">Projects</h1>
-    <p class="mt-4 max-w-2xl text-gray-600">
-      A selection of development and design work, from client projects to personal experiments.
-    </p>
+  <div class="mx-auto max-w-3xl px-6 py-14 sm:px-10">
+    <PageIntro eyebrow="Selected work" title="Projects">
+      A selection of work, from university projects to personal experiments.
+    </PageIntro>
 
-    <div class="mt-12">
+    <div class="mt-14">
       <ProjectsSection />
     </div>
   </div>

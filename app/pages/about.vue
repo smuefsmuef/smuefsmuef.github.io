@@ -6,20 +6,17 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="mx-auto max-w-4xl px-6 py-16 sm:px-10">
-    <h1 class="text-3xl font-bold text-brand-teal sm:text-4xl">About Me</h1>
+  <div class="mx-auto max-w-4xl px-6 py-14 sm:px-10">
+    <PageIntro eyebrow="Who I am" title="About Me">
+      I'm Petra, a Product Owner and developer based in Zurich. I like being close to both the
+      people who decide what to build and the code that builds it — leading projects end to end,
+      from requirements and stakeholder alignment to shipped features.
+    </PageIntro>
 
-    <div class="mt-6 space-y-4 text-gray-600">
-      <p>
-        I'm Petra, a Product Owner and developer based in Zurich. I like being close to both the
-        people who decide what to build and the code that builds it — leading projects end to end,
-        from requirements and stakeholder alignment to shipped features.
-      </p>
-      <p>
-        I hold a Bachelor's degree in Computer Science from FHNW, with a focus on Design and
-        Management.
-      </p>
-    </div>
+    <p class="mt-4 max-w-2xl text-[var(--color-ink-muted)]">
+      I hold a Bachelor's degree in Computer Science from FHNW, with a focus on Design and
+      Management.
+    </p>
 
     <div class="mt-12">
       <AboutSection />

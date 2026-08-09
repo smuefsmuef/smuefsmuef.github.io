@@ -3,7 +3,7 @@ const { social } = useAppConfig()
 </script>
 
 <template>
-  <div class="bg-white py-12">
+  <div class="bg-[var(--color-surface)] py-12">
     <div class="mx-auto flex max-w-6xl justify-center gap-8 px-6 sm:px-10">
       <a
         :href="social.github"

@@ -21,7 +21,7 @@ const items = computed(() => {
 </script>
 
 <template>
-  <ol class="relative space-y-8 sm:border-l sm:border-gray-200">
+  <ol class="relative space-y-8 sm:border-l sm:border-[var(--color-line)]">
     <ExperienceItem v-for="item in items" :key="item.id" :item="item" />
   </ol>
 </template>

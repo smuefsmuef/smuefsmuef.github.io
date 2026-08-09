@@ -33,30 +33,34 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
 </script>
 
 <template>
-  <nav class="relative bg-brand-teal">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
-      <NuxtLink to="/" class="text-lg font-semibold text-white" @click="close">Petra Kohler</NuxtLink>
+  <nav
+    class="sticky top-0 z-40 border-b border-[var(--color-line)] bg-[var(--color-bg)]/85 backdrop-blur-md after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:bg-[linear-gradient(90deg,transparent,var(--color-grad-a)_30%,var(--color-grad-b)_70%,transparent)] after:opacity-60"
+  >
+    <div class="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
+      <NuxtLink to="/" class="font-mono text-sm tracking-wide text-[var(--color-ink)]" @click="close">petra kohler</NuxtLink>
 
-      <button
-        ref="toggleRef"
-        class="text-white sm:hidden"
-        type="button"
-        aria-label="Toggle navigation"
-        :aria-expanded="open"
-        aria-controls="mobile-menu"
-        @click="toggle"
-      >
-        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <div class="flex items-center gap-3 sm:hidden">
+        <ThemeToggle />
+        <button
+          ref="toggleRef"
+          class="text-[var(--color-ink)]"
+          type="button"
+          aria-label="Toggle navigation"
+          :aria-expanded="open"
+          aria-controls="mobile-menu"
+          @click="toggle"
+        >
+          <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
 
       <ul class="hidden items-center gap-8 sm:flex">
         <li v-for="link in links" :key="link.to">
           <NuxtLink
             :to="link.to"
-            class="text-white transition hover:text-white/70 hover:underline"
-            active-class="underline underline-offset-4"
+            class="underline-fade text-[var(--color-ink-muted)] transition hover:text-[var(--color-ink)]"
           >
             {{ link.label }}
           </NuxtLink>
@@ -64,20 +68,23 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
         <li>
           <CvDownloadButton variant="outline" />
         </li>
+        <li>
+          <ThemeToggle />
+        </li>
       </ul>
     </div>
 
     <ul
       v-if="open"
       id="mobile-menu"
-      class="flex flex-col gap-4 bg-brand-teal px-6 pb-6 sm:hidden"
+      class="flex flex-col gap-4 border-t border-[var(--color-line)] bg-[var(--color-bg)] px-6 pb-6 pt-4 sm:hidden"
     >
       <li v-for="(link, index) in links" :key="link.to">
         <NuxtLink
           :ref="index === 0 ? 'firstMobileLinkRef' : undefined"
           :to="link.to"
-          class="text-white"
-          active-class="underline underline-offset-4"
+          class="text-[var(--color-ink)]"
+          active-class="text-[var(--color-brand-teal)] underline underline-offset-4"
           @click="close"
         >
           {{ link.label }}

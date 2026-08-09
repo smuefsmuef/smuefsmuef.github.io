@@ -36,7 +36,7 @@ const meta = categoryMeta[props.item.category]
           <Icon :name="meta.icon" class="h-3 w-3" />
           {{ meta.label }}
         </span>
-        <p class="text-sm text-gray-500">
+        <p class="text-sm text-[var(--color-ink-muted)]">
           <time :datetime="item.dateStart">{{ formatDate(item.dateStart) }}</time>
           –
           <time v-if="item.dateEnd" :datetime="item.dateEnd">{{ formatDate(item.dateEnd) }}</time>
@@ -46,14 +46,14 @@ const meta = categoryMeta[props.item.category]
       </div>
 
       <h3 class="mt-2 text-lg font-semibold text-brand-teal">{{ item.role }}</h3>
-      <p class="text-sm font-medium text-gray-700">
+      <p class="text-sm font-medium text-[var(--color-ink)]">
         <a v-if="item.link" :href="item.link" target="_blank" class="underline decoration-brand-teal/40 underline-offset-2 hover:decoration-brand-teal">{{ item.organization }}</a>
         <span v-else>{{ item.organization }}</span>
       </p>
 
-      <p class="mt-2 text-sm text-gray-600">{{ item.summary }}</p>
+      <p class="mt-2 text-sm text-[var(--color-ink-muted)]">{{ item.summary }}</p>
 
-      <ul v-if="item.highlights?.length" class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-600">
+      <ul v-if="item.highlights?.length" class="mt-2 list-disc space-y-1 pl-5 text-sm text-[var(--color-ink-muted)]">
         <li v-for="highlight in item.highlights" :key="highlight">{{ highlight }}</li>
       </ul>
     </article>

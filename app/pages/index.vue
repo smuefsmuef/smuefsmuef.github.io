@@ -9,11 +9,16 @@ useSeoMeta({
   <div>
     <h1 class="sr-only">Petra Kohler — Product Owner &amp; Software Developer</h1>
 
-    <section class="bg-white py-16">
-      <div class="mx-auto max-w-6xl px-6 sm:px-10">
+    <section class="relative bg-[var(--color-surface)] py-16">
+      <SectionGlow corner="tr" />
+      <PetroglyphMotif variant="dots-a" />
+      <div class="relative z-10 mx-auto max-w-6xl px-6 sm:px-10">
         <div class="flex flex-wrap items-center justify-between gap-4">
-          <h2 class="text-2xl font-semibold text-brand-teal">Leadership &amp; Product Ownership</h2>
-          <NuxtLink to="/experience" class="text-sm font-medium text-brand-teal hover:underline">
+          <div>
+            <p class="eyebrow mb-2">Leadership</p>
+            <h2 class="gradient-heading text-2xl sm:text-3xl">Product Ownership</h2>
+          </div>
+          <NuxtLink to="/experience" class="underline-fade text-sm font-medium text-[var(--color-ink-muted)] hover:text-brand-teal">
             See full experience →
           </NuxtLink>
         </div>
@@ -23,11 +28,17 @@ useSeoMeta({
       </div>
     </section>
 
-    <section class="bg-gray-50 py-16">
-      <div class="mx-auto max-w-6xl px-6 sm:px-10">
+    <section class="relative bg-[var(--color-bg)] py-16">
+      <SectionGlow corner="bl" />
+      <PetroglyphMotif variant="spiral-a" />
+      <PetroglyphMotif variant="dots-b" />
+      <div class="relative z-10 mx-auto max-w-6xl px-6 sm:px-10">
         <div class="flex flex-wrap items-center justify-between gap-4">
-          <h2 class="text-2xl font-semibold text-brand-teal">Featured Development Work</h2>
-          <NuxtLink to="/projects" class="text-sm font-medium text-brand-teal hover:underline">
+          <div>
+            <p class="eyebrow mb-2">Building</p>
+            <h2 class="gradient-heading text-2xl sm:text-3xl">Featured Development Work</h2>
+          </div>
+          <NuxtLink to="/projects" class="underline-fade text-sm font-medium text-[var(--color-ink-muted)] hover:text-brand-teal">
             See all projects →
           </NuxtLink>
         </div>
@@ -37,11 +48,16 @@ useSeoMeta({
       </div>
     </section>
 
-    <section class="bg-white py-16">
-      <div class="mx-auto max-w-6xl px-6 sm:px-10">
+    <section class="relative bg-[var(--color-surface)] py-16">
+      <SectionGlow corner="tl" />
+      <PetroglyphMotif variant="sun" />
+      <div class="relative z-10 mx-auto max-w-6xl px-6 sm:px-10">
         <div class="flex flex-wrap items-center justify-between gap-4">
-          <h2 class="text-2xl font-semibold text-brand-teal">About Me</h2>
-          <NuxtLink to="/about" class="text-sm font-medium text-brand-teal hover:underline">
+          <div>
+            <p class="eyebrow mb-2">Who I am</p>
+            <h2 class="gradient-heading text-2xl sm:text-3xl">About Me</h2>
+          </div>
+          <NuxtLink to="/about" class="underline-fade text-sm font-medium text-[var(--color-ink-muted)] hover:text-brand-teal">
             More about me →
           </NuxtLink>
         </div>

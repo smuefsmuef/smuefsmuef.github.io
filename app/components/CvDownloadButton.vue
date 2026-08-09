@@ -7,8 +7,8 @@ withDefaults(
 )
 
 const variantClasses = {
-  solid: 'bg-white text-brand-teal hover:bg-white/90',
-  outline: 'border border-white text-white hover:bg-white/10',
+  solid: 'bg-[var(--color-surface)] text-brand-teal hover:bg-[var(--color-tag)]',
+  outline: 'border border-[var(--color-line-strong)] text-[var(--color-ink)] hover:border-brand-teal hover:text-brand-teal',
   brand: 'bg-brand-teal text-white hover:bg-brand-teal/90',
 }
 </script>

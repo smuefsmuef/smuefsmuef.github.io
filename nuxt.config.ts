@@ -26,6 +26,11 @@ export default defineNuxtConfig({
         { rel: 'icon', href: '/favicon.ico' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Major+Mono+Display|Raleway' },
       ],
+      script: [
+        {
+          innerHTML: '(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();',
+        },
+      ],
     },
   },
 })

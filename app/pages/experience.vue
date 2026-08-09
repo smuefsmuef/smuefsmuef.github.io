@@ -6,19 +6,23 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="mx-auto max-w-4xl px-6 py-16 sm:px-10">
-    <h1 class="text-3xl font-bold text-brand-teal sm:text-4xl">Experience</h1>
-    <p class="mt-4 max-w-2xl text-gray-600">
+  <div class="mx-auto max-w-4xl px-6 py-14 sm:px-10">
+    <PageIntro eyebrow="Track record" title="Experience">
       A track record of leading and building software projects — from product ownership and
       Scrum leadership to hands-on development.
-    </p>
+    </PageIntro>
 
-    <div class="mt-6">
+    <div class="relative z-10 mt-6">
       <CvDownloadButton variant="brand" />
     </div>
 
-    <div class="mt-12">
-      <ExperienceTimeline />
+    <div class="relative mt-12 py-2">
+      <SectionGlow corner="br" />
+      <PetroglyphMotif variant="sun" />
+      <PetroglyphMotif variant="dots-c" />
+      <div class="relative z-10">
+        <ExperienceTimeline />
+      </div>
     </div>
   </div>
 </template>
