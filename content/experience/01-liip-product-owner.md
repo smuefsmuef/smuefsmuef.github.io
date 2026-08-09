@@ -5,10 +5,11 @@ category: pm
 dateStart: "2024-10"
 current: true
 location: "Zurich, CH"
-summary: "Leading projects and product ownership at Liip, a digital agency, while also serving as apprentice responsible and trainer for Digital Business Developer (EDB) apprentices."
+summary: "Leading CMS projects and product ownership at Liip."
 highlights:
-  - "Product Owner, Project Lead"
-  - "Government, relaunch, rebranding and Drupal CMS projects — from conception through to go-live"
+  - "Open-source Drupal projects, including decoupled setups with the Blökkli editor"
+  - "Relaunch and rebranding projects across sectors such as government, gastronomy and museums"
+  - "Guiding projects from conception through to go-live"
   - "Apprentice Responsible and Trainer for Digital Business Developer (EDB) apprentices"
 link: "https://www.liip.ch/de/team/petra-kohler"
 ---
