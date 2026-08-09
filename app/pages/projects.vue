@@ -7,7 +7,7 @@ useSeoMeta({
 
 <template>
   <div class="mx-auto max-w-3xl px-6 py-14 sm:px-10">
-    <PageIntro eyebrow="Selected work" title="Projects">
+    <PageIntro eyebrow="Selected work" title="">
       A selection of work, from university projects to personal experiments.
     </PageIntro>
 
