@@ -16,6 +16,10 @@ export default defineContentConfig({
         summary: z.string(),
         highlights: z.array(z.string()).optional(),
         link: z.string().url().optional(),
+        relatedLink: z.object({
+          label: z.string(),
+          url: z.string().url(),
+        }).optional(),
       }),
     }),
     certifications: defineCollection({

@@ -13,6 +13,7 @@ const props = defineProps<{
     summary: string
     highlights?: string[]
     link?: string
+    relatedLink?: { label: string; url: string }
   }
 }>()
 
@@ -58,6 +59,16 @@ const badges = computed(() => props.item.categories.map((category) => categoryMe
       <ul v-if="item.highlights?.length" class="mt-2 list-disc space-y-1 pl-5 text-sm text-[var(--color-ink-muted)]">
         <li v-for="highlight in item.highlights" :key="highlight">{{ highlight }}</li>
       </ul>
+
+      <p v-if="item.relatedLink" class="mt-3">
+        <a
+          :href="item.relatedLink.url"
+          target="_blank"
+          class="underline-fade text-sm font-medium text-brand-teal"
+        >
+          {{ item.relatedLink.label }} →
+        </a>
+      </p>
     </article>
   </li>
 </template>
