@@ -31,7 +31,7 @@ useSeoMeta({
         <div class="flex flex-wrap items-center justify-between gap-4">
           <div>
             <p class="eyebrow mb-2">Experience</p>
-            <h2 class="gradient-heading text-2xl sm:text-3xl">Product Ownership</h2>
+            <h2 class="gradient-heading text-2xl sm:text-3xl"></h2>
           </div>
           <NuxtLink to="/experience" class="underline-fade text-sm font-medium text-[var(--color-ink-muted)] hover:text-brand-teal">
             See full experience →

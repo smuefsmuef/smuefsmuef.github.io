@@ -14,7 +14,7 @@ const { data: allExperience } = await useAsyncData(
 
 const items = computed(() => {
   const filtered = props.category
-    ? (allExperience.value ?? []).filter((item) => item.category === props.category)
+    ? (allExperience.value ?? []).filter((item) => item.categories.includes(props.category))
     : (allExperience.value ?? [])
   return props.limit ? filtered.slice(0, props.limit) : filtered
 })

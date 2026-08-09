@@ -1,7 +1,7 @@
 ---
 role: "Software Developer & Project Lead"
 organization: "Brickwork Ventures GmbH, Winterthur"
-category: pm
+categories: [pm, dev]
 dateStart: "2013-03"
 dateEnd: "2023-08"
 location: "Winterthur, CH"

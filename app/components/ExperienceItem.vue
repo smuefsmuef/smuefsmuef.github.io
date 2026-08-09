@@ -5,7 +5,7 @@ const props = defineProps<{
   item: {
     role: string
     organization: string
-    category: 'pm' | 'dev' | 'design'
+    categories: Array<'pm' | 'dev' | 'design'>
     dateStart: string
     dateEnd?: string
     current?: boolean
@@ -21,7 +21,7 @@ function formatDate(value: string) {
   return new Date(year, month - 1).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })
 }
 
-const meta = categoryMeta[props.item.category]
+const badges = computed(() => props.item.categories.map((category) => categoryMeta[category]))
 </script>
 
 <template>
@@ -30,11 +30,13 @@ const meta = categoryMeta[props.item.category]
     <article>
       <div class="flex flex-wrap items-center gap-2">
         <span
+          v-for="badge in badges"
+          :key="badge.label"
           class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold"
-          :class="meta.badgeClass"
+          :class="badge.badgeClass"
         >
-          <Icon :name="meta.icon" class="h-3 w-3" />
-          {{ meta.label }}
+          <Icon :name="badge.icon" class="h-3 w-3" />
+          {{ badge.label }}
         </span>
         <p class="text-sm text-[var(--color-ink-muted)]">
           <time :datetime="item.dateStart">{{ formatDate(item.dateStart) }}</time>

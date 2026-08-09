@@ -8,7 +8,7 @@ export default defineContentConfig({
       schema: z.object({
         role: z.string(),
         organization: z.string(),
-        category: z.enum(['pm', 'dev', 'design']),
+        categories: z.array(z.enum(['pm', 'dev', 'design'])).min(1),
         dateStart: z.string(),
         dateEnd: z.string().optional(),
         current: z.boolean().optional(),
