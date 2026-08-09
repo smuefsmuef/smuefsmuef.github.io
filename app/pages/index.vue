@@ -38,7 +38,7 @@ useSeoMeta({
           </NuxtLink>
         </div>
         <div class="mt-8">
-          <ExperienceTimeline category="pm" :limit="3" />
+          <ExperienceTimeline category="pm" :limit="2" />
         </div>
       </div>
     </section>
