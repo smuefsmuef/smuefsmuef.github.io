@@ -14,7 +14,15 @@ const allItems = computed(() => {
     category: 'writing' as const,
     link: pub.link,
   }))
-  return [...(projects.value ?? []), ...writingItems]
+
+  const polybau = writingItems.find((item) => item.title.includes('Polybau'))
+  const madrano = writingItems.find((item) => item.title.includes('Airolo-Madrano'))
+
+  const combined = polybau ? [polybau, ...(projects.value ?? [])] : [...(projects.value ?? [])]
+  if (madrano) {
+    combined.splice(Math.max(combined.length - 1, 0), 0, madrano)
+  }
+  return combined
 })
 
 const activeCategory = ref<'dev' | 'design' | 'pm' | 'writing' | null>(null)
