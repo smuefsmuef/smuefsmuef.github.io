@@ -1,5 +1,5 @@
 ---
 title: "HERMES Foundation - Certified"
 issuer: "HERMES"
-date: "Early 2025"
+date: "2025"
 ---
