@@ -21,7 +21,7 @@ defineProps<{
     <div class="flex flex-1 flex-col p-5">
       <h3 class="text-lg font-semibold text-brand-teal">{{ project.title }}</h3>
       <p class="mt-2 flex-1 text-sm text-gray-600">{{ project.description }}</p>
-      <p class="mt-4 text-xs font-medium uppercase tracking-wide text-brand-teal/70">{{ project.tools }}</p>
+      <p class="mt-4 text-xs font-medium uppercase tracking-wide text-brand-teal">{{ project.tools }}</p>
     </div>
   </a>
   <div v-else class="flex flex-col overflow-hidden rounded-lg bg-white shadow">
@@ -29,7 +29,7 @@ defineProps<{
     <div class="flex flex-1 flex-col p-5">
       <h3 class="text-lg font-semibold text-brand-teal">{{ project.title }}</h3>
       <p class="mt-2 flex-1 text-sm text-gray-600">{{ project.description }}</p>
-      <p class="mt-4 text-xs font-medium uppercase tracking-wide text-brand-teal/70">{{ project.tools }}</p>
+      <p class="mt-4 text-xs font-medium uppercase tracking-wide text-brand-teal">{{ project.tools }}</p>
     </div>
   </div>
 </template>

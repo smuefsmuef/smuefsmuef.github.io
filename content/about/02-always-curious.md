@@ -1,5 +1,5 @@
 ---
 icon: dharmachakra
 title: Always curious
-text: Traveled to four continents, studied ancient cultures, good with numbers and self-taught frontend developer.
+text: Traveled to four continents, studied ancient cultures, and stayed curious about how technology and people intersect.
 ---

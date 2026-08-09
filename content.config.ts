@@ -2,6 +2,22 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 export default defineContentConfig({
   collections: {
+    experience: defineCollection({
+      type: 'data',
+      source: 'experience/*.md',
+      schema: z.object({
+        role: z.string(),
+        organization: z.string(),
+        category: z.enum(['pm', 'dev', 'design']),
+        dateStart: z.string(),
+        dateEnd: z.string().optional(),
+        current: z.boolean().optional(),
+        location: z.string().optional(),
+        summary: z.string(),
+        highlights: z.array(z.string()).optional(),
+        link: z.string().url().optional(),
+      }),
+    }),
     projects: defineCollection({
       type: 'data',
       source: 'projects/*.md',
@@ -10,6 +26,7 @@ export default defineContentConfig({
         image: z.string(),
         description: z.string(),
         tools: z.string(),
+        category: z.enum(['dev', 'design']),
         link: z.string().url().optional(),
       }),
     }),

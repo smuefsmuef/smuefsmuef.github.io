@@ -16,10 +16,11 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Petra Kohler',
+      htmlAttrs: { lang: 'en' },
+      title: 'Petra Kohler — Product Owner & Software Developer',
       meta: [
-        { name: 'description', content: 'Petra Kohler - Web Developer - Computer Sciences Student - based Zurich.' },
-        { name: 'keywords', content: 'Petra Zürich International Web IT Computer Science Girls in Tech Scrum Agile Travel Expert Mexico iCompetence Design Project Management Javascript Vue React Angular Git' },
+        { name: 'description', content: 'Petra Kohler leads and builds software projects in Zurich — Product Ownership, Project Leadership, Development and Design.' },
+        { name: 'keywords', content: 'Petra Kohler Zürich Product Owner Project Lead Scrum Master Software Developer Web Development Design Agile FHNW' },
       ],
       link: [
         { rel: 'icon', href: '/favicon.ico' },

@@ -1,8 +1,12 @@
+<script setup lang="ts">
+const year = new Date().getFullYear()
+</script>
+
 <template>
-  <footer id="footer" class="bg-brand-teal py-8 text-center text-white">
+  <footer class="bg-brand-teal py-8 text-center text-white">
     <div class="mx-auto max-w-6xl px-6 sm:px-10">
-      <p>© Copyright 2024 Petra Kohler</p>
-      <p class="mt-2 text-xs text-white/70">
+      <p>© Copyright {{ year }} Petra Kohler</p>
+      <p class="mt-2 text-xs text-white/80">
         Icons made by
         <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp" class="underline">Eucalyp</a>
         from
