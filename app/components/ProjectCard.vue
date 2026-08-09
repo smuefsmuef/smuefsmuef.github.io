@@ -33,10 +33,10 @@ const badges = computed(() => props.project.categories.map((category) => categor
         <span
           v-for="badge in badges"
           :key="badge.label"
-          class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.65rem] font-semibold"
+          class="inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-[0.55rem] font-semibold"
           :class="badge.badgeClass"
         >
-          <Icon :name="badge.icon" class="h-2.5 w-2.5" />
+          <Icon :name="badge.icon" class="h-2 w-2" />
           {{ badge.label }}
         </span>
       </div>
