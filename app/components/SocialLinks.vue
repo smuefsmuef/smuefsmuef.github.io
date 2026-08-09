@@ -10,7 +10,7 @@ const links = [
 </script>
 
 <template>
-  <ul class="flex max-w-xs flex-col gap-1">
+  <ul class="flex flex-col gap-1">
     <li v-for="link in links" :key="link.label">
       <a
         :href="link.href"
